@@ -18,7 +18,7 @@ function FileUploadDialog() {
       }
       const formData = new FormData();
       formData.append("file", file);
-      const response = await axios.post("https://localhost:7178/api/product/uploadcsv", formData);
+      const response = await axios.post("https://productmanagement-1-y299.onrender.com/api/product/uploadcsv", formData);
       console.log("File uploaded:", response.data);
       setVisible(false);
     } catch (error) {

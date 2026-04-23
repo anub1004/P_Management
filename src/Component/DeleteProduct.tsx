@@ -2,7 +2,7 @@ function DeleteProduct({ isdeleteOpen, id, onClose,fresh}: any) {
 
   const deleteProduct = async (id: string) => {
     try {
-      const response = await fetch(`https://localhost:7178/api/product/${id}`, {
+      const response = await fetch(`https://productmanagement-1-y299.onrender.com/api/product/${id}`, {
         method: "DELETE",
       });
 

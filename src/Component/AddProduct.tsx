@@ -32,7 +32,7 @@ function AddProduct({
     }
     e.preventDefault();
     try {
-      const response = await axios.post("https://localhost:7178/api/product", formData);
+      const response = await axios.post("https://productmanagement-1-y299.onrender.com/api/product", formData);
       console.log("Product added:", response.data);
       setFormData({
         name: "",

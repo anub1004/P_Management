@@ -44,7 +44,7 @@ useEffect(() => {
     }
    
     try {
-      const response = await axios.put(`https://localhost:7178/api/product/${id}`, editDatas);
+      const response = await axios.put(`https://productmanagement-1-y299.onrender.com/api/product/${id}`, editDatas);
       console.log("Product updated:", response.data);
       fresh?.();
       onClose();
