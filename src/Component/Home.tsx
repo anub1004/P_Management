@@ -12,7 +12,7 @@ function Home() {
       const [isOpen, setIsOpen] = useState(false);
   const [refresh, setRefresh] = useState(false);
 useEffect(() => {
-    fetch('https://localhost:7178/api/product')
+    fetch('https://dashboard.render.com/web/srv-d7kvbb6gvqtc73876mbg/api/product')
       .then(response => response.json())
       .then((data: Product[]) => {
         setProducts(Array.isArray(data) ? data : []);
