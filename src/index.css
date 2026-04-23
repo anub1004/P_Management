@@ -1,0 +1,180 @@
+.H{
+  text-align: center;
+  font-size: 30px;
+}
+.add-button{
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+.add-button:hover {  background-color: #45a049;
+}
+.table-container {  margin: 20px auto;
+  width: 80%;   
+ 
+}
+/* ── Layer 2: The dark overlay ── */
+.overlay {
+  position: fixed;      /* covers the WHOLE screen */
+  inset: 0;             /* shorthand for top:0 right:0 bottom:0 left:0 */
+  z-index: 100;         /* sits above product list */
+  background: rgba(0, 0, 0, 0.45);   /* semi-transparent black */
+
+  /* Centers the modal inside it automatically: */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Layer 3: The modal box ── */
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 380px;
+  max-width: 95%;
+  z-index: 101;         /* sits above the overlay */
+}
+
+/* ── Layer 1: Blur the product list ── */
+.blurred {
+ 
+  pointer-events: none;  /* disables clicks on blurred content */
+  user-select: none;
+}
+.heading{
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+}
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.button {  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;     }
+.input-group {
+  position: relative;
+  
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: gray;
+  transition: 0.3s ease;
+  pointer-events: none;
+  background: white;
+  padding: 0 5px;
+}
+
+/* When input is focused OR has value */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: rgb(191, 11, 32);
+}
+.input-group input:focus  label
+ {
+  top: -10px;
+  font-size: 12px;
+  color: blue;
+}
+.Submit-but {
+  padding: 10px 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Cancel-button {
+  padding: 10px 10px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.edit-button{
+  padding :17 20px;
+  color:green;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.delete-button{
+  padding :17 20px;
+  color:red;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.cancel-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.import-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.inputcsv {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
