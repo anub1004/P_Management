@@ -4,7 +4,7 @@ import { Button } from "primereact/button";
 import Papa from "papaparse";
 import axios from "axios";
 
-function FileUploadDialog() {
+function FileUploadDialog({api}: any) {
   const [visible, setVisible] = useState(false);
   const [data, setData] = useState<Record<string, unknown>[]>([]);
    const [file, setFile] = useState<File | null>(null);
@@ -18,7 +18,7 @@ function FileUploadDialog() {
       }
       const formData = new FormData();
       formData.append("file", file);
-      const response = await axios.post("https://productmanagement-1-y299.onrender.com/api/product/uploadcsv", formData);
+      const response = await axios.post(`${api}/api/product/uploadcsv`, formData);
       console.log("File uploaded:", response.data);
       setVisible(false);
     } catch (error) {

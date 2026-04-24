@@ -5,12 +5,14 @@ import { useState, type ChangeEvent, type MouseEvent } from "react";
 function AddProduct({
   isOpen,
   onClose,
-  fresh
+  fresh,
+  api
 
 }: {
   isOpen: boolean;
   onClose: () => void;
   fresh: () => void;
+  api: any;
 }   ) {
   const [formData, setFormData] = useState({
     name: "",
@@ -32,7 +34,7 @@ function AddProduct({
     }
     e.preventDefault();
     try {
-      const response = await axios.post("https://productmanagement-1-y299.onrender.com/api/product", formData);
+      const response = await axios.post(`${api}/api/product`, formData);
       console.log("Product added:", response.data);
       setFormData({
         name: "",

@@ -3,33 +3,33 @@ import { InputText } from "primereact/inputtext";
 import axios from "axios";
 import { useEffect, useState, type ChangeEvent } from "react";
 function EditProduct({
-    id,
+  id,
   isOpen,
   onClose,
   fresh,
-  editData  
-
+  editData,
+  api,
 }: {
-    id: String;
+  id: String;
   isOpen: boolean;
   onClose: () => void;
   fresh: () => void;
-editData: {
-
+  api: any;
+  editData: {
     name: string;
     description: string;
     price: number;
     stock: number;
   };
 }) {
-   let [editDatas, setFormData] = useState<any>(editData);
+  let [editDatas, setFormData] = useState<any>(editData);
   console.log("editData in EditProduct:", editData);
 
-useEffect(() => {
-  if (editData) {
-    setFormData(editData);
-  }
-}, [editData]);
+  useEffect(() => {
+    if (editData) {
+      setFormData(editData);
+    }
+  }, [editData]);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...editDatas,
@@ -37,14 +37,22 @@ useEffect(() => {
     });
   };
 
-  const handleSubmit = async (id :string) => {
-   if (!editDatas.name || !editDatas.description || editDatas.price <= 0 || editDatas.stock < 0) {
+  const handleSubmit = async (id: string) => {
+    if (
+      !editDatas.name ||
+      !editDatas.description ||
+      editDatas.price <= 0 ||
+      editDatas.stock < 0
+    ) {
       alert("Please fill in all fields correctly.");
       return;
     }
-   
+
     try {
-      const response = await axios.put(`https://productmanagement-1-y299.onrender.com/api/product/${id}`, editDatas);
+      const response = await axios.put(
+        `${api}/api/product/${id}`,
+        editDatas,
+      );
       console.log("Product updated:", response.data);
       fresh?.();
       onClose();

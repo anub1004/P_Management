@@ -1,8 +1,8 @@
-function DeleteProduct({ isdeleteOpen, id, onClose,fresh}: any) {
+function DeleteProduct({ isdeleteOpen, id, onClose,fresh,api}: any) {
 
-  const deleteProduct = async (id: string) => {
+  const deleteProduct = async (id: string,api:string) => {
     try {
-      const response = await fetch(`https://productmanagement-1-y299.onrender.com/api/product/${id}`, {
+      const response = await fetch(`${api}/api/product/${id}`, {
         method: "DELETE",
       });
 
@@ -36,7 +36,7 @@ return (
                 Cancel
               </button>
               <button
-                onClick={() => deleteProduct(id)}
+                onClick={() => deleteProduct(id,api)}
                 className="delete-button"
               >
                 Yes, Delete
